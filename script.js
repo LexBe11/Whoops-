@@ -1,3 +1,13 @@
+// Initialize game board with 16x16 squares
+function initializeBoard() {
+    const gameBoard = document.getElementById('game-board');
+    for (let i = 0; i < 16 * 16; i++) {
+        const square = document.createElement('div');
+        square.className = 'square';
+        gameBoard.appendChild(square);
+    }
+}
+
 function showRules() {
     document.getElementById('main-game').style.display = 'none';
     document.getElementById('rules-page').style.display = 'block';
@@ -13,6 +23,7 @@ function chooseColor(color) {
     document.getElementById('color-selection').style.display = 'none';
     
     // Initialize game setup here...
+    initializeBoard();
 }
 
 function drawCard() {
@@ -77,3 +88,6 @@ function placePiece(squareId, pieceColor) {
         piece.style.animation = '';
     }, 500);
 }
+
+// Initialize board on page load
+window.onload = initializeBoard;

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whoops! Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Whoops! Online</h1>
+
+    <button id="rules-button" onclick="showRules()">Rules & Changelog</button>
+    
+    <div id="main-game">
+        <div id="color-selection">
+            <button id="blueButton" onclick="chooseColor('blue')">Choose Blue</button>
+            <button id="redButton" onclick="chooseColor('red')">Choose Red</button>
+            <button id="greenButton" onclick="chooseColor('green')">Choose Green</button>
+            <button id="yellowButton" onclick="chooseColor('yellow')">Choose Yellow</button>
+        </div>
+
+        <div id="game-container">
+            <div id="game-board">
+                <!-- Squares and special areas will be generated here -->
+            </div>
+            <div id="deck">
+                <button id="draw-card" onclick="drawCard()">Draw Card</button>
+            </div>
+            <div id="discard-pile">
+                <h2>Discard Pile</h2>
+                <div id="discarded-cards"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rules-page" style="display:none;">
+        <h2>Rules</h2>
+        <p>Whoops! Online is a game similar to Sorry! where players race their pieces around the board to get them "home."</p>
+        <ul>
+            <li>Each player has 4 pieces.</li>
+            <li>Players draw cards to move their pieces.</li>
+            <li>To move a piece out of the start area, a player must draw a 1 or 2.</li>
+            <li>Pieces move according to the number on the drawn card.</li>
+            <li>Special Cards:
+                <ul>
+                    <li><strong>Whoops</strong>: Switch places with another player.</li>
+                    <li><strong>Wipe Out</strong>: Send any one piece back to its start area.</li>
+                </ul>
+            </li>
+            <li>To win, all 4 pieces must reach the home area by exact count.</li>
+        </ul>
+
+        <h2>Changelog</h2>
+        <ul>
+            <li>Version 1.0: Initial release with basic game mechanics.</li>
+            <li>Version 1.1: Added animations for drawing cards, moving pieces, and shuffling the deck.</li>
+            <li>Version 1.2: Implemented "Whoops" and "Wipe Out" cards.</li>
+            <li>Version 1.251: Introduced special animations and enhanced game board design.</li>
+        </ul>
+        <button onclick="showMainGame()">Back to Game</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

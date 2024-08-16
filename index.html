@@ -8,55 +8,59 @@
 </head>
 <body>
     <h1>Whoops! Online</h1>
-
-    <button id="rules-button" onclick="showRules()">Rules & Changelog</button>
     
-    <div id="main-game">
-        <div id="color-selection">
-            <button id="blueButton" onclick="chooseColor('blue')">Choose Blue</button>
-            <button id="redButton" onclick="chooseColor('red')">Choose Red</button>
-            <button id="greenButton" onclick="chooseColor('green')">Choose Green</button>
-            <button id="yellowButton" onclick="chooseColor('yellow')">Choose Yellow</button>
-        </div>
+    <button id="rules-button" onclick="showRules()">Rules</button>
+    
+    <div id="color-selection">
+        <button onclick="chooseColor('red')">Choose Red</button>
+        <button onclick="chooseColor('blue')">Choose Blue</button>
+        <button onclick="chooseColor('green')">Choose Green</button>
+        <button onclick="chooseColor('yellow')">Choose Yellow</button>
+    </div>
 
+    <div id="main-game">
         <div id="game-container">
             <div id="game-board">
-                <!-- Squares and special areas will be generated here -->
+                <!-- Squares for the board -->
+                <!-- Generate squares programmatically in JavaScript -->
             </div>
             <div id="deck">
                 <button id="draw-card" onclick="drawCard()">Draw Card</button>
             </div>
             <div id="discard-pile">
-                <h2>Discard Pile</h2>
                 <div id="discarded-cards"></div>
             </div>
         </div>
     </div>
-
+    
     <div id="rules-page" style="display:none;">
-        <h2>Rules</h2>
-        <p>Whoops! Online is a game similar to Sorry! where players race their pieces around the board to get them "home."</p>
+        <h2>Game Rules</h2>
+        <p><strong>Objective:</strong> Move all your pieces from the start to the "Home" area before your opponents do.</p>
+        
+        <p><strong>Setup:</strong></p>
         <ul>
-            <li>Each player has 4 pieces.</li>
-            <li>Players draw cards to move their pieces.</li>
-            <li>To move a piece out of the start area, a player must draw a 1 or 2.</li>
-            <li>Pieces move according to the number on the drawn card.</li>
-            <li>Special Cards:
-                <ul>
-                    <li><strong>Whoops</strong>: Switch places with another player.</li>
-                    <li><strong>Wipe Out</strong>: Send any one piece back to its start area.</li>
-                </ul>
-            </li>
-            <li>To win, all 4 pieces must reach the home area by exact count.</li>
+            <li>Each player starts with 4 pieces in their start area.</li>
+            <li>The board consists of 16x16 squares with a designated start area, home area, and a path connecting them.</li>
         </ul>
-
-        <h2>Changelog</h2>
+        
+        <p><strong>Card Play:</strong></p>
         <ul>
-            <li>Version 1.0: Initial release with basic game mechanics.</li>
-            <li>Version 1.1: Added animations for drawing cards, moving pieces, and shuffling the deck.</li>
-            <li>Version 1.2: Implemented "Whoops" and "Wipe Out" cards.</li>
-            <li>Version 1.251: Introduced special animations and enhanced game board design.</li>
+            <li>Players draw cards from the deck to determine their moves.</li>
+            <li>Some cards allow players to move forward, backward, or perform special actions.</li>
         </ul>
+        
+        <p><strong>Special Cards:</strong></p>
+        <ul>
+            <li><strong>Whoops:</strong> Move one piece to the start.</li>
+            <li><strong>Wipe Out:</strong> Remove an opponent's piece from the board.</li>
+        </ul>
+        
+        <p><strong>Movement:</strong></p>
+        <ul>
+            <li>Players move pieces according to the card drawn.</li>
+            <li>Landing on a square occupied by an opponent sends their piece back to start.</li>
+        </ul>
+        
         <button onclick="showMainGame()">Back to Game</button>
     </div>
 
